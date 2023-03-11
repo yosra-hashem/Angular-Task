@@ -1,0 +1,18 @@
+
+<div class="container-fluid" ps-0>
+    <section class="row">
+        <h1 class="col-4">Product Details Page</h1>
+        <div class="card" style="width: 40rem;">
+            <img class="card-img-top" [src]="product.thumbnail" />
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">Category: {{ product.category }}</p>
+                <p class="card-text">Price: {{ product.price }}</p>
+                <p class="card-text">In stock: {{ product.stock }}</p>
+                <p class="card-text">Rating: {{ product.rating }}</p>
+                <p class="card-text">{{ product.description }}</p>
+            </div>
+        </div>
+    </section>
+    
+</div>

@@ -1,0 +1,11 @@
+<div class="container-fluid" ps-0>
+    <section class="row">
+        <h1 class="col-5">Product List Page</h1>
+        </section>
+        <div class="d-flex justify-content-evenly row">
+            <div class="col-4" *ngFor="let product of prdList.products">
+                <app-card-view [product]="product"></app-card-view>
+            </div>
+        </div>
+    
+</div>

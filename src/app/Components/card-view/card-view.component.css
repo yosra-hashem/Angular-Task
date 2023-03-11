@@ -1,0 +1,10 @@
+.image_div{
+    height:300px;
+    width: 480px;  
+    overflow: hidden;  
+}
+
+.image_image{
+    height:auto;
+    max-width: 100%;
+}

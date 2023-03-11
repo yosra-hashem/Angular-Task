@@ -1,0 +1,13 @@
+<div class="card" style="width: 30rem; margin: 10px 0px">
+    <div class="image_div">
+        <img class="card-img-top img-thumbnail image_image" [src]="product.thumbnail" />
+    </div>
+    <div class="card-body" >
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.category }}</p>
+        <p class="card-text">{{ product.price | currency}}</p>
+        <p class="card-text">{{ product.stock }} in stock</p>
+        <p class="card-text">Rating: {{ product.rating }}</p>
+        <a routerLink="/products/{{product.id}}" class="btn btn-primary">Details</a>
+    </div>
+</div>
