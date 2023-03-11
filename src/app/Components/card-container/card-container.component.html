@@ -1,7 +1,7 @@
 <div class="container-fluid" ps-0>
-        <div class="d-flex justify-content-evenly row">
-            <div class="col-4" *ngFor="let product of prdList.products; index as i">
-                <app-card-view *ngIf="i < limit" [product]="product"></app-card-view>
-            </div>
+    <div class="d-flex justify-content-evenly row">
+        <div class="col-4" *ngFor="let product of prdList.products; index as i">
+            <app-card-view *ngIf="i < limit" [product]="product" (deleteEvent)="deleteFromList($event)"></app-card-view>
         </div>
+    </div>
 </div>

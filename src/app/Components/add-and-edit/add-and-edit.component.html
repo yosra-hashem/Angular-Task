@@ -1,0 +1,82 @@
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="submit()">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title" name="title">
+        <div *ngIf="title?.touched && title?.errors">
+            <div class="alert alert-danger" *ngIf="title?.errors?.required">
+                The title is required
+            </div>
+        </div>
+
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+        <div *ngIf="description?.touched && description?.errors">
+            <div class="alert alert-danger" *ngIf="description?.errors?.required">
+                The description is required
+            </div>
+        </div>
+
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price" formControlName="price" name="price">
+        <div *ngIf="price?.touched && price?.errors">
+            <div class="alert alert-danger" *ngIf="price?.errors?.required">
+                The price is required
+            </div>
+        </div>
+
+        <label for="discountPercentage" class="form-label">Discount Percentage</label>
+        <input type="text" class="form-control" id="discountPercentage" formControlName="discountPercentage"
+            name="discountPercentage">
+
+        <label for="rating" class="form-label">Rating</label>
+        <input type="text" class="form-control" id="rating" formControlName="rating" name="rating">
+        <div *ngIf="rating?.touched && rating?.errors">
+            <div class="alert alert-danger" *ngIf="rating?.errors?.required">
+                The price is required
+            </div>
+        </div>
+
+        <label for="stock" class="form-label">Stock</label>
+        <input type="text" class="form-control" id="stock" formControlName="stock" name="stock">
+        <div *ngIf="stock?.touched && stock?.errors">
+            <div class="alert alert-danger" *ngIf="stock?.errors?.required">
+                The stock is required
+            </div>
+        </div>
+
+        <label for="brand" class="form-label">Brand Name</label>
+        <input type="text" class="form-control" id="brand" formControlName="brand" name="brand">
+        <div *ngIf="brand?.touched && brand?.errors">
+            <div class="alert alert-danger" *ngIf="brand?.errors?.required">
+                The brand is required
+            </div>
+        </div>
+
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="category" formControlName="category" name="category">
+        <div *ngIf="category?.touched && category?.errors">
+            <div class="alert alert-danger" *ngIf="category?.errors?.required">
+                The category is required
+            </div>
+        </div>
+
+        <label for="thumbnail" class="form-label">Thumbnail</label>
+        <input type="text" class="form-control" id="thumbnail" formControlName="thumbnail" name="thumbnail">
+        <div *ngIf="thumbnail?.touched && title?.errors">
+            <div class="alert alert-danger" *ngIf="thumbnail?.errors?.required">
+                The thumbnail is required
+            </div>
+        </div>
+
+        <div formArrayName="images">
+            <div class="mb-3 ms-3" *ngFor="let image of images.controls; let i=index">
+                <label for="{{'uImage-' + i}}" class="form-label">Image #{{i+1}}</label>
+                <input type="text" [formControlName]="i" class="form-control" id="{{'uImage-' + i}}"
+                    name="{{'uImage-' + i}}">
+                <button type="button" class="btn btn-primary" (click)="addImage($event)">+</button>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!productForm.valid">Submit</button>
+    </form>
+</div>

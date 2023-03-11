@@ -1,3 +1,3 @@
 export const environment = {
-    APIURL:'https://dummyjson.com'
+    APIURL:'https://dummyjson.com/auth'
 };

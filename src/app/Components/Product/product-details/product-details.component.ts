@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/Models/product';
 import { ProductsService } from 'src/app/Services/products.service';
 
@@ -11,7 +11,7 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class ProductDetailsComponent implements OnInit{
   product:Product;
 
-  constructor(private prdService:ProductsService, private id:ActivatedRoute){
+  constructor(private prdService:ProductsService, private id:ActivatedRoute, private router:Router){
     this.product={} as Product;
   }
   ngOnInit() {
@@ -20,6 +20,10 @@ export class ProductDetailsComponent implements OnInit{
     .subscribe(product=>{
       this.product=product;
       console.log(this.product);
+    },
+      error => {
+        //alert("this product doesn't exist")
+        this.router.navigate(["/product-not-found"])
     });
   }
 }

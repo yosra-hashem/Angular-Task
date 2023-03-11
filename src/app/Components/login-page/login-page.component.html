@@ -1,1 +1,20 @@
-<p>login-page works!</p>
+<div class="d-flex align-items-center justify-content-center mt-3">
+   <form [formGroup]="accountForm" (ngSubmit)="signIn()">
+      <h3>Sign in</h3>
+      <label>User Name</label>
+      <input type="text" class="form-control mt-3 mb-3 p-2" id="username" formControlName="username">
+      <div *ngIf="username?.touched && username?.errors">
+         <div class="alert alert-danger" *ngIf="username?.errors?.required">
+            The username is required
+         </div>
+      </div>
+      <label>Password</label>
+      <input type="password" id="password" class="form-control mt-3 mb-3 p-2" formControlName="password">
+      <div *ngIf="password?.touched && password?.errors">
+         <div class="alert alert-danger" *ngIf="password?.errors?.required">
+            The password is required
+         </div>
+      </div>
+      <button class="btn btn-primary m-3" type="submit" [disabled]="!accountForm.valid">Sign in</button>
+   </form>
+</div>
