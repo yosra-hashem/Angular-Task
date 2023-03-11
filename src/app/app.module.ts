@@ -10,6 +10,10 @@ import { CardViewComponent } from './Components/card-view/card-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardContainerComponent } from './Components/card-container/card-container.component';
 import { ProductDetailsComponent } from './Components/Product/product-details/product-details.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { LoginPageComponent } from './Components/login-page/login-page.component'; // <-- import the module
+
 
 @NgModule({
   declarations: [
@@ -19,12 +23,15 @@ import { ProductDetailsComponent } from './Components/Product/product-details/pr
     ProductListComponent,
     CardViewComponent,
     CardContainerComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    NotFoundComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

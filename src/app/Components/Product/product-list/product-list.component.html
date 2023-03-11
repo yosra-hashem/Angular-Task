@@ -3,9 +3,12 @@
         <h1 class="col-5">Product List Page</h1>
         </section>
         <div class="d-flex justify-content-evenly row">
-            <div class="col-4" *ngFor="let product of prdList.products">
+            <div class="col-4" *ngFor="let product of prdList.products | paginate: { itemsPerPage, currentPage}">
                 <app-card-view [product]="product"></app-card-view>
             </div>
         </div>
     
+</div>
+<div class="mt-8 py-5 d-flex justify-content-center items-center">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>

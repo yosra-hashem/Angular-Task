@@ -9,8 +9,13 @@ import { ProductsService } from 'src/app/Services/products.service';
 })
 export class ProductListComponent implements OnInit{
   prdList: IProduct;
+  currentPage: number;
+  itemsPerPage:number;
+
   constructor(private prdService:ProductsService){
     this.prdList= {} as IProduct;
+    this.currentPage=1;
+    this.itemsPerPage=6;
   }
   ngOnInit() {
     this.prdService.getAllProducts()
